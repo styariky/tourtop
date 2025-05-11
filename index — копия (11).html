@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Турагентство "ТурТоп"</title>
+<style>
+  /* Общие стили */
+  body {
+    background-color: #121212; /* темный фон */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  /* Заголовок */
+  header {
+    text-align: center;
+    padding: 20px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  /* Навигация */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #1f1f1f;
+    padding: 10px 0;
+  }
+  .tab {
+    background-color: #333;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  .tab:hover {
+    background-color: #555;
+  }
+  /* Разделы */
+  .section {
+    display: none;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Страны и города */
+  .destinations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .destination {
+    background-color: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    width: calc(33% - 20px);
+    transition: transform 0.3s;
+  }
+  .destination:hover {
+    transform: scale(1.05);
+  }
+  .destination img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .destination-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .destination-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .buy-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .buy-button:hover {
+    background-color: #0056b3;
+  }
+  /* Анимация появления */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+header {
+            background: linear-gradient(135deg, #1e5799, #207cca);
+            color: white;
+            padding: 20px;
+            text-align: center;
+  }
+</style>
+</head>
+<body>
+
+   <header>
+       <h1>Турагентство "TourTop"</h1>
+       <p>Лучшие туры по всему миру</p>
+   </header>
+
+<!-- Вкладки -->
+<div class="tabs">
+  <button class="tab active" data-section="about">О нас</button>
+  <button class="tab" data-section="tours">Туры</button>
+  <button class="tab" data-section="contacts">Контакты</button>
+</div>
+
+<!-- Раздел "О нас" -->
+<div id="about" class="section active">
+  <h2>О нашей компании</h2>
+  <p>Мы предлагаем лучшие туры по всему миру. Наслаждайтесь путешествиями с нами!</p>
+  <p>9 из 11 покупателей были довольны полетом!</p>
+  <p>Быстрые принятия заявок</p>
+  <p>Интересные экскурсии и путешествия!</p>
+  <h2>Отзывы</h2>
+  <p>Полет в Нью-Йорк был бомбезным! - Александр Б.</p>
+  <p>Быстро приняли нашу заявку и мы полетели отдыхать! - Маша З.</p>
+  <p>Полетели на юг, не повезло с погодой, но впечатлений много! - Лука П.</p>
+</div>
+
+<!-- Раздел "Туры" -->
+<div id="tours" class="section">
+  <!-- Страны и города -->
+  <h2>Популярные направления</h2>
+  <div class="destinations">
+    <!-- Москва -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1579623019874-4b5f0d0e2f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Москва" />
+      <div class="destination-info">
+        <div class="destination-name">Москва</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+    <!-- Париж -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Париж" />
+      <div class="destination-info">
+        <div class="destination-name">Париж</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+    <!-- Нью-Йорк -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Нью-Йорк" />
+      <div class="destination-info">
+        <div class="destination-name">Нью-Йорк</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+    <!-- Токио -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1567644037112-1ed0d0516c09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Токио" />
+      <div class="destination-info">
+        <div class="destination-name">Токио</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+    <!-- Барселона -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Барселона" />
+      <div class="destination-info">
+        <div class="destination-name">Барселона</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+    <!-- Лондон -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Лондон" />
+      <div class="destination-info">
+        <div class="destination-name">Лондон</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+    <!-- Дубай -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Дубай" />
+      <div class="destination-info">
+        <div class="destination-name">Дубай</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+    <!-- Бангкок -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1567644037112-1ed0d0516c09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Бангкок" />
+      <div class="destination-info">
+        <div class="destination-name">Бангкок</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+    <!-- Лас-Вегас -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Лас-Вегас" />
+      <div class="destination-info">
+        <div class="destination-name">Лас-Вегас</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+    <!-- Лимассол -->
+    <div class="destination">
+      <img src="https://images.unsplash.com/photo-1579623019874-4b5f0d0e2f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Лимассол" />
+      <div class="destination-info">
+        <div class="destination-name">Лимассол</div>
+        <button class="buy-button">Купить билет</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Раздел "Контакты" -->
+<div id="contacts" class="section">
+  <h2>Контактная информация</h2>
+  <p>Телефон: +7 993 993 42 69</p>
+  <p>Email: info@TourTop.ru</p>
+  <p>Адрес: г. Чебоксары, ул. Лебедева, д. 13</p>
+</div>
+<script>
+  // Переключение вкладок с анимацией
+  const tabs = document.querySelectorAll('.tab');
+  const sections = document.querySelectorAll('.section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Убираем активность у всех вкладок
+      tabs.forEach(t => t.classList.remove('active'));
+      // Активируем выбранную вкладку
+      tab.classList.add('active');
+
+      const target = tab.getAttribute('data-section');
+
+      sections.forEach(section => {
+        if (section.id === target) {
+          section.classList.add('active');
+          // Анимация появления
+          section.style.animation = 'fadeInUp 0.5s ease forwards';
+        } else {
+          section.classList.remove('active');
+          section.style.animation = '';
+        }
+      });
+    });
+  });
+</script>
+<footer>
+  <p>© 2025 Туристический сайт TourTop. Все права защищены.</p>
+</footer>
+</body>
+</html>
